@@ -54,7 +54,7 @@ public abstract class GPSEngine {
 	}
 
 	private boolean explode(GPSNode node) {
-		if(bestCosts.containsKey(node) && bestCosts.get(node.getState()) < node.getCost()){
+		if(bestCosts.containsKey(node) && bestCosts.get(node.getState()) <= node.getCost()){
 			return false;
 		}
 		updateBest(node);

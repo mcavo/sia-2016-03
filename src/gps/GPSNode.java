@@ -60,4 +60,8 @@ public class GPSNode {
 		return true;
 	}
 
+	public int hashCode(){
+		return state.hashCode();
+	}
+	
 }

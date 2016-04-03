@@ -14,4 +14,6 @@ public interface GPSState {
 	 */
 	boolean equals(Object state);
 
+	boolean isGoal();
+	
 }
