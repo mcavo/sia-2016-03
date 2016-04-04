@@ -1,19 +1,17 @@
 package tests;
 
-import gps.SearchStrategy;
-import gps.api.GPSState;
 import buildings.BuildingsEngine;
 import buildings.BuildingsProblem;
+import gps.SearchStrategy;
+import models.CardinalDirection;
+import utils.Parser;
 
 public class Test {
 
 	
 	public static void main(String[] args) {
-		int[] south = new int[]{0,0,0,0,0};
-		int[] north = new int[]{0,0,0,0,0};
-		int[] west = new int[]{0,0,0,0,0};
-		int[] east = new int[]{0,0,0,0,0};
-		BuildingsProblem problem = new BuildingsProblem(south, north, east, west);
+		int[][] dir = Parser.parseDirections();
+		BuildingsProblem problem = new BuildingsProblem(dir[CardinalDirection.SOUTH.ordinal()], dir[CardinalDirection.NORTH.ordinal()], dir[CardinalDirection.EAST.ordinal()], dir[CardinalDirection.WEST.ordinal()]);
 		BuildingsEngine engine = new BuildingsEngine();
 		engine.engine(problem, SearchStrategy.DFS);
 	}
