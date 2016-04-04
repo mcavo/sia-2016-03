@@ -12,6 +12,8 @@ public class SkylineHeuristic implements Heuristic {
 	private int[] north;
 	private int[] east;
 	private int[] west;
+	private int[] horizontal;
+	private int[] vertical;
 	
 	@Override
 	public int getH(GPSState state) {
@@ -22,17 +24,28 @@ public class SkylineHeuristic implements Heuristic {
 		east = ((BuildingsState)state).getEast();
 		west = ((BuildingsState)state).getWest();
 		LENGTH = south.length;
-		int westDif = difWest();
-		int northDif = difNorth();
-		int eastDif = difEast();
-		int southDif = difSouth();	
-		return (int) Math.ceil((westDif+northDif+eastDif+southDif)/(6));
+		horizontal = new int[LENGTH];
+		vertical = new int[LENGTH];
+		difWest();
+		difNorth();
+		difEast();
+		difSouth();
+		int counter1=0;
+		int counter2=0;
+		for(int i=0; i<horizontal.length; i++){
+			if(horizontal[i]==1){
+				counter1++;
+			}
+			if(vertical[i]==1){
+				counter2++;
+			}
+		}
+		return (int) Math.max(counter1, Math.ceil(counter2/2));
 		
 		
 	}
 
-	private int difWest() {
-		int counter = 0;
+	private void difWest() {
 		for (int i = 0; i < LENGTH; i++) {
 			if (west[i] > 0) {
 				int count = 0, max = 0;
@@ -43,15 +56,13 @@ public class SkylineHeuristic implements Heuristic {
 					}
 				}
 				if (west[i] != count) {
-					counter ++;
+					horizontal[i]=1;
 				}
 			}
 		}
-		return counter;
 	}
 
-	private int difEast() {
-		int counter=0;
+	private void difEast() {
 		for (int i = 0; i < LENGTH; i++) {
 			if (east[i] > 0) {
 				int count = 0, max = 0;
@@ -62,15 +73,13 @@ public class SkylineHeuristic implements Heuristic {
 					}
 				}
 				if (east[i] != count) {
-					counter ++;
+					horizontal[i]=1;;
 				}
 			}
 		}
-		return counter;
 	}
 
-	private int difNorth() {
-		int counter = 0;
+	private void difNorth() {
 		for (int i = 0; i < LENGTH; i++) {
 			if (north[i] > 0) {
 				int count = 0, max = 0;
@@ -81,15 +90,13 @@ public class SkylineHeuristic implements Heuristic {
 					}
 				}
 				if (north[i] != count) {
-					counter ++;
+					vertical[i]=1;
 				}
 			}
 		}
-		return counter;
 	}
 
-	private int difSouth() {
-		int counter = 0;
+	private void difSouth() {
 		for (int i = 0; i < LENGTH; i++) {
 			if (south[i] > 0) {
 				int count = 0, max = 0;
@@ -100,11 +107,10 @@ public class SkylineHeuristic implements Heuristic {
 					}
 				}
 				if (south[i] != count) {
-					counter ++;
+					vertical[i]=1;
 				}
 			}
 		}
-		return counter;
 	}
 
 }
