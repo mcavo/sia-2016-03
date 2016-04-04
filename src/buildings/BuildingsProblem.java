@@ -7,6 +7,8 @@ import gps.api.GPSState;
 import java.util.LinkedList;
 import java.util.List;
 
+import buildings.heuristics.Heuristic;
+
 public class BuildingsProblem implements GPSProblem{
 	
 	
@@ -17,18 +19,20 @@ public class BuildingsProblem implements GPSProblem{
 	private int[] east ;
 	private int[] west ;
 	private int length;
+	private Heuristic h;
 	
 	
 	public static void main(String[] args) {
 	
 	}
 	
-	public BuildingsProblem(int[] south, int[] north, int[] east, int[] west) {
+	public BuildingsProblem(int[] south, int[] north, int[] east, int[] west, Heuristic h) {
 		this.south = south;
 		this.north = north;
 		this.east = east;
 		this.west = west;
 		length = west.length;
+		this.h = h;
 		createRules();
 	}
 
@@ -48,7 +52,8 @@ public class BuildingsProblem implements GPSProblem{
 		int imap[][] = new int[length][length];
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < length; j++) {
-				imap[i][j] = j + 1;
+//				imap[i][j] = (j + i)%length +1;
+				imap[i][j] = j+1;
 			}
 		}
 		return new BuildingsState(south, north, east, west, imap);
@@ -66,6 +71,6 @@ public class BuildingsProblem implements GPSProblem{
 
 	@Override
 	public Integer getHValue(GPSState state) {
-		return 1;
+		return h.getH(state);
 	}
 }
