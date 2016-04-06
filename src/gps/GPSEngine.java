@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
 
+import javax.swing.SingleSelectionModel;
+
 public abstract class GPSEngine {
 
 	protected Queue<GPSNode> open;

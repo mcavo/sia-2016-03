@@ -17,6 +17,11 @@ public class Parser {
 //S 2 1 3
 //E 1 2 2
 //W 3 1 2
+//3
+//N 2 2 1
+//S 2 1 3
+//W 3 1 2
+//E 1 2 2
 	public static int[][] parseDirections() {
 		Scanner in = new Scanner(System.in);
 		try {
