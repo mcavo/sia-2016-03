@@ -1,13 +1,13 @@
 package tests;
 
-import gps.SearchStrategy;
-import models.CardinalDirection;
-import utils.Parser;
 import buildings.BuildingsEngine;
 import buildings.BuildingsProblem;
 import buildings.heuristics.CompoundHeuristic;
 import buildings.heuristics.SkylineHeuristic;
 import buildings.heuristics.SudokuHeuristic;
+import gps.SearchStrategy;
+import models.CardinalDirection;
+import utils.Parser;
 
 public class Test {
 
@@ -40,6 +40,7 @@ public class Test {
 		case "IDDFS":{
 			int i=1;
 			while(!(engine.engine(problem, SearchStrategy.DFS,i))){
+				engine = new BuildingsEngine();
 				i++;				
 			}
 			break;
