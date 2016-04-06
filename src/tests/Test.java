@@ -19,14 +19,45 @@ public class Test {
 			}
 			System.out.println(" ");
 		}
+		String strategy = args[0];
 		BuildingsProblem problem = new BuildingsProblem(
 				dir[CardinalDirection.SOUTH.ordinal()],
 				dir[CardinalDirection.NORTH.ordinal()],
 				dir[CardinalDirection.EAST.ordinal()],
 				dir[CardinalDirection.WEST.ordinal()], 
 				new CompoundHeuristic(new SudokuHeuristic(), new SkylineHeuristic()));
+		
 		BuildingsEngine engine = new BuildingsEngine();
-		engine.engine(problem, SearchStrategy.GREEDY);
+		switch(strategy){
+		case "DFS":{
+			engine.engine(problem, SearchStrategy.DFS,0);
+			break;
+		}
+		case "BFS":{
+			engine.engine(problem, SearchStrategy.BFS,0);
+			break;
+		}
+		case "IDDFS":{
+			int i=1;
+			while(!(engine.engine(problem, SearchStrategy.DFS,i))){
+				i++;				
+			}
+			break;
+		}
+		case "GREEDY":{
+			engine.engine(problem, SearchStrategy.GREEDY,0);
+			break;
+		}
+		case "ASTAR":{
+			engine.engine(problem, SearchStrategy.ASTAR,0);
+			break;
+		}		
+		default:{
+			System.out.println("Parametro invalido.");
+		}
+		}
+
+		
 	}
 
 }

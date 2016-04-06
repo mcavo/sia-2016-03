@@ -19,12 +19,13 @@ public abstract class GPSEngine {
 	// Use this variable in open set order.
 	protected SearchStrategy strategy;
 
-	public void engine(GPSProblem myProblem, SearchStrategy myStrategy) {
+	public boolean engine(GPSProblem myProblem, SearchStrategy myStrategy,
+			Integer maxDepth) {
 
 		problem = myProblem;
 		strategy = myStrategy;
 
-		GPSNode rootNode = new GPSNode(problem.getInitState(), 0);
+		GPSNode rootNode = new GPSNode(problem.getInitState(), 0, 0);
 		boolean finished = false;
 		boolean failed = false;
 		long explosionCounter = 0;
@@ -39,22 +40,30 @@ public abstract class GPSEngine {
 					finished = true;
 					System.out.println(currentNode.getSolution());
 					System.out.println("Expanded nodes: " + explosionCounter);
-					System.out.println("Solution cost: " + currentNode.getCost());
+					System.out.println("Solution cost: "
+							+ currentNode.getCost());
 				} else {
-					explosionCounter++;
-					explode(currentNode);
+					if (maxDepth == 0 || currentNode.getDepth()<maxDepth) {
+						explosionCounter++;
+						explode(currentNode);
+					}
+					
 				}
 			}
 		}
 		if (finished) {
 			System.out.println("OK! solution found!");
+			return true;
 		} else if (failed) {
 			System.err.println("FAILED! solution not found!");
+			return false;
 		}
+		return true;
 	}
 
 	private boolean explode(GPSNode node) {
-		if(bestCosts.containsKey(node) && bestCosts.get(node.getState()) <= node.getCost()){
+		if (bestCosts.containsKey(node)
+				&& bestCosts.get(node.getState()) <= node.getCost()) {
 			return false;
 		}
 		updateBest(node);
@@ -69,8 +78,10 @@ public abstract class GPSEngine {
 			} catch (NotAppliableException e) {
 				// Do nothing
 			}
-			if (newState != null && isBest(newState, node.getCost() + rule.getCost())) {
-				GPSNode newNode = new GPSNode(newState, node.getCost() + rule.getCost());
+			if (newState != null
+					&& isBest(newState, node.getCost() + rule.getCost())) {
+				GPSNode newNode = new GPSNode(newState, node.getCost()
+						+ rule.getCost(), node.getDepth() + 1);
 				newNode.setParent(node);
 				open.add(newNode);
 			}

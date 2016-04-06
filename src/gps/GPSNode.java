@@ -9,12 +9,20 @@ public class GPSNode {
 	private GPSNode parent;
 
 	private Integer cost;
+	
+	private Integer depth;
 
-	public GPSNode(GPSState state, Integer cost) {
+	public GPSNode(GPSState state, Integer cost, Integer depth) {
 		this.state = state;
 		this.cost = cost;
+		this.depth = depth;
 	}
 
+	
+	public Integer getDepth(){
+		return depth;
+	}
+	
 	public GPSNode getParent() {
 		return parent;
 	}

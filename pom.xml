@@ -27,7 +27,7 @@
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
 							<!-- TODO: main -->
-							<mainClass></mainClass>
+							<mainClass>test.Test</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

@@ -7,11 +7,16 @@ import models.CardinalDirection;
 public class Parser {
 	private static int DIRECTIONS = 4;
 //  Example	
-//	5
-//	N 2 5 2 2 1
-//	S 3 1 2 2 4
-//	E 1 2 2 2 4
-//	W 4 1 2 3 2
+//5
+//N 2 5 2 2 1
+//S 3 1 2 2 4
+//E 1 2 2 2 4
+//W 4 1 2 3 2
+//3
+//N 2 2 1
+//S 2 1 3
+//E 1 2 2
+//W 3 1 2
 	public static int[][] parseDirections() {
 		Scanner in = new Scanner(System.in);
 		try {
