@@ -25,7 +25,7 @@ public class BuildingsRule implements GPSRule {
 	@Override
 	public String getName() {
 		return "Swaps positions " + x1 + " and " + x2 + " from row " + row
-				+ ".";
+				+ ".\n";
 	}
 
 	@Override
@@ -37,7 +37,6 @@ public class BuildingsRule implements GPSRule {
 		newMap[row][x2] = aux;
 		BuildingsState ans = new BuildingsState(s.getSouth(), s.getNorth(),
 				s.getEast(), s.getWest(), newMap);
-		System.out.println(ans);
 		return ans;
 	}
 

@@ -1,87 +1,105 @@
 package tests;
 
+import gps.SearchStrategy;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
+import utils.BuildingsParser;
+import utils.OutputManager;
 import buildings.BuildingsEngine;
 import buildings.BuildingsProblem;
 import buildings.heuristics.CompoundHeuristic;
 import buildings.heuristics.SkylineHeuristic;
 import buildings.heuristics.SudokuHeuristic;
-import gps.SearchStrategy;
-import utils.BuildingsParser;
 
 public class Test {
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		
+		if(args.length != 2){
+			System.out.println("Invalid parameters");
+			return;
+		}
+			
+		long end = 0;
+		long start = 0;
 		BufferedReader br = null;
+		OutputManager output = OutputManager.getInstance();
+
 		try {
 
 			br = new BufferedReader(new FileReader(args[0]));
 			BuildingsParser p = new BuildingsParser(br);
-			
-			BuildingsProblem problem = new BuildingsProblem(
-					p.getSouth(),
-					p.getNorth(),
-					p.getEast(),
-					p.getWest(), 
-					new CompoundHeuristic(new SudokuHeuristic(), new SkylineHeuristic()));
-			
+			output.setFile(new FileWriter(args[1]));
+			output.writeln("INPUT\n");
+			BufferedReader br2 = new BufferedReader(new FileReader(args[0]));
+			while(output.writeln(br2.readLine())){
+				//Do nothing.
+			}
+			output.writeln("\nOUTPUT\n");
+			BuildingsProblem problem = new BuildingsProblem(p.getSouth(),
+					p.getNorth(), p.getEast(), p.getWest(),
+					new CompoundHeuristic(new SudokuHeuristic(),
+							new SkylineHeuristic()), p.getInitialBoard());
+
 			BuildingsEngine engine = new BuildingsEngine();
-			switch(p.getSearchStrategy()){
-			case "DFS":{
-				engine.engine(problem, SearchStrategy.DFS,0);
+			start = System.currentTimeMillis();
+			switch (p.getSearchStrategy()) {
+			case "DFS": {
+				engine.engine(problem, SearchStrategy.DFS, 0);
+				output.writeln("Strategy used : DFS");
 				break;
 			}
-			case "BFS":{
-				engine.engine(problem, SearchStrategy.BFS,0);
+			case "BFS": {
+				engine.engine(problem, SearchStrategy.BFS, 0);
+				output.writeln("Strategy used : BFS");
 				break;
 			}
-			case "IDDFS":{
-				int i=1;
-				while(!(engine.engine(problem, SearchStrategy.DFS,i))){
+			case "IDDFS": {
+				int i = 1;
+				while (!(engine.engine(problem, SearchStrategy.DFS, i))) {
 					engine = new BuildingsEngine();
-					i++;				
+					i++;
 				}
+				output.writeln("Strategy used : IDDFS");
 				break;
 			}
-			case "GREEDY":{
-				engine.engine(problem, SearchStrategy.GREEDY,0);
+			case "GREEDY": {
+				engine.engine(problem, SearchStrategy.GREEDY, 0);
+				output.writeln("Strategy used : GREEDY");
 				break;
 			}
-			case "ASTAR":{
-				engine.engine(problem, SearchStrategy.ASTAR,0);
+			case "ASTAR": {
+				engine.engine(problem, SearchStrategy.ASTAR, 0);
+				output.writeln("Strategy used : ASTAR");
 				break;
-			}		
-			default:{
-				System.out.println("Parametro invalido.");
+			}
+			default: {
+				output.writeln("Invalid Strategy");
 			}
 			}
-			
-			
+
+			end = System.currentTimeMillis();
+			output.writeln("It took " + (end - start)
+					+ " milliseconds to finish.");
+			output.close();
 
 		} catch (IOException e) {
 			System.out.println("");
 		} finally {
 			try {
-				if (br != null)br.close();
+				if (br != null)
+					br.close();
 			} catch (IOException ex) {
 				ex.printStackTrace();
+
 			}
 		}
-		
-		
-		
-//		for (int i = 0; i < dir.length; i++) {
-//			for (int j = 0; j < dir[0].length; j++) {
-//				System.out.print(dir[i][j]);
-//			}
-//			System.out.println(" ");
-//		}
 
-		
 	}
 
 }

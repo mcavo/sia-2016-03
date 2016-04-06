@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
 
-import javax.swing.SingleSelectionModel;
+import utils.OutputManager;
 
 public abstract class GPSEngine {
 
 	protected Queue<GPSNode> open;
 	protected Map<GPSState, Integer> bestCosts = new HashMap<GPSState, Integer>();
-
+	protected OutputManager output;
 	protected GPSProblem problem;
 
 	// Use this variable in open set order.
@@ -23,11 +23,11 @@ public abstract class GPSEngine {
 
 	public boolean engine(GPSProblem myProblem, SearchStrategy myStrategy,
 			Integer maxDepth) {
-
+		output = OutputManager.getInstance();
 		problem = myProblem;
 		strategy = myStrategy;
-
-		GPSNode rootNode = new GPSNode(problem.getInitState(), 0, 0);
+		boolean lastIt=true;
+		GPSNode rootNode = new GPSNode(problem.getInitState(), 0, 0, null);
 		boolean finished = false;
 		boolean failed = false;
 		long explosionCounter = 0;
@@ -40,25 +40,34 @@ public abstract class GPSEngine {
 				GPSNode currentNode = open.remove();
 				if (problem.isGoal(currentNode.getState())) {
 					finished = true;
-					System.out.println(currentNode.getSolution());
-					System.out.println("Expanded nodes: " + explosionCounter);
-					System.out.println("Solution cost: "
+					output.writeln("OK! solution found!\n");
+					output.writeln(currentNode.getSolution()+"\n");
+					output.writeln("Expanded nodes: " + explosionCounter);
+					output.writeln("Border nodes: " + open.size());					
+					output.writeln("Analized states: " + bestCosts.size());
+					output.writeln("Solution cost: "
+							+ currentNode.getCost());
+					output.writeln("Solution depth: "
 							+ currentNode.getCost());
 				} else {
 					if (maxDepth == 0 || currentNode.getDepth()<maxDepth) {
 						explosionCounter++;
 						explode(currentNode);
+					} else {
+						lastIt=false;
 					}
+					
 					
 				}
 			}
 		}
-		if (finished) {
-			System.out.println("OK! solution found!");
+		if (finished) {	
 			return true;
 		} else if (failed) {
-			System.err.println("FAILED! solution not found!");
-			return false;
+			if(lastIt){
+				output.writeln("FAILED! solution not found!");				
+			}
+			return lastIt;
 		}
 		return true;
 	}
@@ -83,7 +92,7 @@ public abstract class GPSEngine {
 			if (newState != null
 					&& isBest(newState, node.getCost() + rule.getCost())) {
 				GPSNode newNode = new GPSNode(newState, node.getCost()
-						+ rule.getCost(), node.getDepth() + 1);
+						+ rule.getCost(), node.getDepth() + 1, rule);
 				newNode.setParent(node);
 				open.add(newNode);
 			}
