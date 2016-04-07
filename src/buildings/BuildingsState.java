@@ -29,19 +29,6 @@ public class BuildingsState implements GPSState {
 		this.map = map;
 	}
 
-	public static void main(String[] args) {
-		int[] south = new int[] { 3, 1, 2, 2, 4 };
-		int[] north = new int[] { 2, 5, 2, 2, 1 };
-		int[] west = new int[] { 4, 1, 2, 3, 2 };
-		int[] east = new int[] { 1, 2, 2, 2, 4 };
-		BuildingsState s = new BuildingsState(south, north, east, west,
-				new int[][] { new int[] { 2, 1, 3, 4, 5 },
-						new int[] { 5, 2, 1, 3, 4 },
-						new int[] { 4, 3, 5, 1, 2 },
-						new int[] { 1, 4, 2, 5, 3 },
-						new int[] { 3, 5, 4, 2, 1 } });
-	}
-
 	public int[] getSouth() {
 		return buildingsSeen[CardinalDirection.SOUTH.ordinal()];
 	}

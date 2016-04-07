@@ -20,13 +20,14 @@ public class BuildingsProblem implements GPSProblem{
 	private int[] west ;
 	private int length;
 	private Heuristic h;
+	private int[][] initialMap;
 	
 	
 	public static void main(String[] args) {
 	
 	}
 	
-	public BuildingsProblem(int[] south, int[] north, int[] east, int[] west, Heuristic h) {
+	public BuildingsProblem(int[] south, int[] north, int[] east, int[] west, Heuristic h, int[][] initialMap) {
 		this.south = south;
 		this.north = north;
 		this.east = east;
@@ -34,6 +35,7 @@ public class BuildingsProblem implements GPSProblem{
 		length = west.length;
 		this.h = h;
 		createRules();
+		this.initialMap = initialMap;
 	}
 
 	private void createRules() {
@@ -49,14 +51,7 @@ public class BuildingsProblem implements GPSProblem{
 
 	@Override
 	public GPSState getInitState() {
-		int imap[][] = new int[length][length];
-		for (int i = 0; i < length; i++) {
-			for (int j = 0; j < length; j++) {
-//				imap[i][j] = (j + i)%length +1;
-				imap[i][j] = j+1;
-			}
-		}
-		return new BuildingsState(south, north, east, west, imap);
+		return new BuildingsState(south, north, east, west, initialMap);
 	}
 
 	@Override
