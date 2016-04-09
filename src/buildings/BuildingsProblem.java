@@ -9,25 +9,24 @@ import java.util.List;
 
 import buildings.heuristics.Heuristic;
 
-public class BuildingsProblem implements GPSProblem{
-	
-	
-	List<GPSRule> rules ;
-	
-	private int[] south ;
-	private int[] north ;
-	private int[] east ;
-	private int[] west ;
+public class BuildingsProblem implements GPSProblem {
+
+	List<GPSRule> rules;
+
+	private int[] south;
+	private int[] north;
+	private int[] east;
+	private int[] west;
 	private int length;
 	private Heuristic h;
 	private int[][] initialMap;
-	
-	
+
 	public static void main(String[] args) {
-	
+
 	}
-	
-	public BuildingsProblem(int[] south, int[] north, int[] east, int[] west, Heuristic h, int[][] initialMap) {
+
+	public BuildingsProblem(int[] south, int[] north, int[] east, int[] west,
+			Heuristic h, int[][] initialMap) {
 		this.south = south;
 		this.north = north;
 		this.east = east;
@@ -40,13 +39,20 @@ public class BuildingsProblem implements GPSProblem{
 
 	private void createRules() {
 		rules = new LinkedList<GPSRule>();
-		for(int i=0; i<length;i++){
-			for(int j=0; j<length-1;j++){
-				for(int k=j+1; k<length; k++){
-					rules.add(new BuildingsRule(i,j,k));
-				}
+		// for(int i=0; i<length;i++){
+		// for(int j=0; j<length-1;j++){
+		// for(int k=j+1; k<length; k++){
+		// rules.add(new BuildingsRule(i,j,k));
+		// }
+		// }
+		// }
+		for (int i = 0; i < length - 1; i++) {
+			for (int j = i + 1; j < length; j++) {
+				rules.add(new BuildingsRule2(true, i, j));
+				rules.add(new BuildingsRule2(false, i, j));
 			}
-		}		
+		}
+
 	}
 
 	@Override

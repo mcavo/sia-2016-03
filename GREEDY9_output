@@ -1,0 +1,207 @@
+INPUT
+
+Search Strategy
+GREEDY
+Board Size
+5
+Directions
+N 5 2 0 0 1
+S 1 0 0 0 2
+W 0 0 0 2 1
+E 1 4 2 2 2
+Initial Board
+3 5 1 2 4
+2 5 1 3 4
+1 4 3 5 2
+2 4 5 3 1
+3 5 1 2 4
+
+OUTPUT
+
+OK! solution found!
+
+    5 2 0 0 1 
+   -----------
+0 | 3 5 1 2 4 | 1
+0 | 2 5 1 3 4 | 4
+0 | 1 4 3 5 2 | 2
+2 | 2 4 5 3 1 | 2
+1 | 3 5 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 2 and 3 from row 0.
+
+    5 2 0 0 1 
+   -----------
+0 | 3 5 2 1 4 | 1
+0 | 2 5 1 3 4 | 4
+0 | 1 4 3 5 2 | 2
+2 | 2 4 5 3 1 | 2
+1 | 3 5 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 0 and 1 from row 4.
+
+    5 2 0 0 1 
+   -----------
+0 | 3 5 2 1 4 | 1
+0 | 2 5 1 3 4 | 4
+0 | 1 4 3 5 2 | 2
+2 | 2 4 5 3 1 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 0 and 4 from row 0.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 5 2 1 3 | 1
+0 | 2 5 1 3 4 | 4
+0 | 1 4 3 5 2 | 2
+2 | 2 4 5 3 1 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 2 and 4 from row 1.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 5 2 1 3 | 1
+0 | 2 5 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 2 4 5 3 1 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 5 2 1 3 | 1
+0 | 5 2 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 2 4 5 3 1 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 1 and 4 from row 3.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 5 2 1 3 | 1
+0 | 5 2 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 2 1 5 3 4 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 0 and 3 from row 3.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 5 2 1 3 | 1
+0 | 5 2 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 3 1 5 2 4 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 5 2 1 3 | 1
+0 | 2 5 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 3 1 5 2 4 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 1 and 4 from row 0.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 3 2 1 5 | 1
+0 | 2 5 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 3 1 5 2 4 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 1 and 3 from row 3.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 3 2 1 5 | 1
+0 | 2 5 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 3 2 5 1 4 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 0 and 4 from row 3.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 3 2 1 5 | 1
+0 | 2 5 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 4 2 5 1 3 | 2
+1 | 5 3 1 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 1 and 2 from row 4.
+
+    5 2 0 0 1 
+   -----------
+0 | 4 3 2 1 5 | 1
+0 | 2 5 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 4 2 5 1 3 | 2
+1 | 5 1 3 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 0 and 3 from row 0.
+
+    5 2 0 0 1 
+   -----------
+0 | 1 3 2 4 5 | 1
+0 | 2 5 4 3 1 | 4
+0 | 1 4 3 5 2 | 2
+2 | 4 2 5 1 3 | 2
+1 | 5 1 3 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Applying rule: Swaps positions 0 and 2 from row 2.
+
+    5 2 0 0 1 
+   -----------
+0 | 1 3 2 4 5 | 1
+0 | 2 5 4 3 1 | 4
+0 | 3 4 1 5 2 | 2
+2 | 4 2 5 1 3 | 2
+1 | 5 1 3 2 4 | 2
+   -----------
+    1 0 0 0 2 
+
+Expanded nodes: 88
+Border nodes: 4186
+Analized states: 80
+Solution cost: 14
+Solution depth: 14
+Strategy used : GREEDY
+It took 169 milliseconds to finish.

@@ -19,12 +19,12 @@ public class Test {
 
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		
-		if(args.length != 2){
+
+		if (args.length != 2) {
 			System.out.println("Invalid parameters");
 			return;
 		}
-			
+
 		long end = 0;
 		long start = 0;
 		BufferedReader br = null;
@@ -37,14 +37,13 @@ public class Test {
 			output.setFile(new FileWriter(args[1]));
 			output.writeln("INPUT\n");
 			BufferedReader br2 = new BufferedReader(new FileReader(args[0]));
-			while(output.writeln(br2.readLine())){
-				//Do nothing.
+			while (output.writeln(br2.readLine())) {
+				// Do nothing.
 			}
 			output.writeln("\nOUTPUT\n");
 			BuildingsProblem problem = new BuildingsProblem(p.getSouth(),
 					p.getNorth(), p.getEast(), p.getWest(),
-					new CompoundHeuristic(new SudokuHeuristic(),
-							new SkylineHeuristic()), p.getInitialBoard());
+					new SkylineHeuristic(), p.getInitialBoard());
 
 			BuildingsEngine engine = new BuildingsEngine();
 			start = System.currentTimeMillis();

@@ -1,0 +1,15 @@
+Search Strategy
+GREEDY
+Board Size
+5
+Directions
+N 0 0 3 2 1
+S 0 0 0 0 0
+W 0 2 0 0 0
+E 0 0 0 0 0
+Initial Board
+5 4 1 2 3
+1 2 3 5 4
+5 4 3 1 2
+2 5 4 3 1
+4 2 3 5 1

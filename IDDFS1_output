@@ -1,0 +1,63 @@
+INPUT
+
+Search Strategy
+IDDFS
+Board Size
+5
+Directions
+N 0 0 0 0 0
+S 0 0 0 0 0
+W 0 0 0 0 0
+E 0 0 0 0 0
+Initial Board
+1 2 3 4 5
+2 4 3 5 1
+3 4 1 5 2
+4 5 1 2 3
+5 1 2 3 4
+
+OUTPUT
+
+OK! solution found!
+
+    0 0 0 0 0 
+   -----------
+0 | 1 2 3 4 5 | 0
+0 | 2 4 3 5 1 | 0
+0 | 3 4 1 5 2 | 0
+0 | 4 5 1 2 3 | 0
+0 | 5 1 2 3 4 | 0
+   -----------
+    0 0 0 0 0 
+
+Applying rule: Swaps positions 2 and 3 from row 2.
+
+    0 0 0 0 0 
+   -----------
+0 | 1 2 3 4 5 | 0
+0 | 2 4 3 5 1 | 0
+0 | 3 4 5 1 2 | 0
+0 | 4 5 1 2 3 | 0
+0 | 5 1 2 3 4 | 0
+   -----------
+    0 0 0 0 0 
+
+Applying rule: Swaps positions 1 and 2 from row 1.
+
+    0 0 0 0 0 
+   -----------
+0 | 1 2 3 4 5 | 0
+0 | 2 3 4 5 1 | 0
+0 | 3 4 5 1 2 | 0
+0 | 4 5 1 2 3 | 0
+0 | 5 1 2 3 4 | 0
+   -----------
+    0 0 0 0 0 
+
+Expanded nodes: 5
+Border nodes: 47
+Analized states: 5
+Solution cost: 2
+Solution depth: 2
+Strategy used : IDDFS
+It took 9 milliseconds to finish.
