@@ -1,8 +1,7 @@
 package buildings.heuristics;
 
-import models.CardinalDirection;
-import gps.api.GPSState;
 import buildings.BuildingsState;
+import gps.api.GPSState;
 
 public class SkylineHeuristic implements Heuristic {
 

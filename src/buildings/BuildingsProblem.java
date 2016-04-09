@@ -22,11 +22,6 @@ public class BuildingsProblem implements GPSProblem{
 	private Heuristic h;
 	private int[][] initialMap;
 	
-	
-	public static void main(String[] args) {
-	
-	}
-	
 	public BuildingsProblem(int[] south, int[] north, int[] east, int[] west, Heuristic h, int[][] initialMap) {
 		this.south = south;
 		this.north = north;
