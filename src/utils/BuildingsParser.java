@@ -4,21 +4,34 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 import gps.SearchStrategy;
+import models.BuildingsHeuristic;
 import models.CardinalDirection;
 
 public class BuildingsParser {
 	
 	private static int DIRECTIONS = 4;
-	
-	private String searchStrategy;
+	private SearchStrategy searchStrategy;
+	private String heuristic;
 	private int[][] dirMap;
 	private int[][] initialBoard;
 	
 	public BuildingsParser(BufferedReader br) throws IOException{
 		try {
+			String sStrategy;
 			br.readLine(); //Search Strategy
-			searchStrategy = br.readLine();
-			if(!validSearchStrategy(searchStrategy))
+			sStrategy = br.readLine();
+			if(!validSearchStrategy(sStrategy))
+				throw new IllegalArgumentException();
+			for(SearchStrategy ss : SearchStrategy.values()) {
+				if(ss.name().equals(sStrategy)) {
+					searchStrategy = ss;
+					break;
+				}
+			}
+			br.readLine(); //Heuristic
+			heuristic = br.readLine();
+			System.out.println(heuristic);
+			if(!validHeuristic(heuristic))
 				throw new IllegalArgumentException();
 			br.readLine(); //Board Size
 			int length = Integer.parseInt(br.readLine());
@@ -57,6 +70,13 @@ public class BuildingsParser {
 		}
 	}
 	
+	private boolean validHeuristic(String heuristic) {
+		for(BuildingsHeuristic bh : BuildingsHeuristic.values())
+			if(bh.name().equals(heuristic))
+				return true;
+		return false;
+	}
+
 	private boolean validSearchStrategy(String searchStrategy) {
 		for(SearchStrategy ss : SearchStrategy.values())
 			if(ss.name().equals(searchStrategy))
@@ -87,8 +107,11 @@ public class BuildingsParser {
 		}
 	}
 	
-	public String getSearchStrategy() {
+	public SearchStrategy getSearchStrategy() {
 		return searchStrategy;
+	}
+	public String getHeuristic() {
+		return heuristic;
 	}
 	
 	public int[] getSouth() {
