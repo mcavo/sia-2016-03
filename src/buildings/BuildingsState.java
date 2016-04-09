@@ -1,9 +1,6 @@
 package buildings;
 
 import gps.api.GPSState;
-
-import java.util.Arrays;
-
 import models.CardinalDirection;
 
 public class BuildingsState implements GPSState {
@@ -107,7 +104,10 @@ public class BuildingsState implements GPSState {
 			state.append(buildingsSeen[CardinalDirection.NORTH.ordinal()][i]
 					+ " ");
 		}
-		state.append("\n   -----------\n");
+		state.append("\n   ");
+		for(int i=0; i<(LENGTH*2 +1);i++)
+			state.append("-");
+		state.append("\n");
 		for (int i = 0; i < LENGTH; i++) {
 			state.append(buildingsSeen[CardinalDirection.WEST.ordinal()][i]
 					+ " | ");
@@ -116,7 +116,10 @@ public class BuildingsState implements GPSState {
 			state.append("| "
 					+ buildingsSeen[CardinalDirection.EAST.ordinal()][i] + "\n");
 		}
-		state.append("   -----------\n    ");
+		state.append("   ");
+		for(int i=0; i<(LENGTH*2 +1);i++)
+			state.append("-");
+		state.append("\n    ");
 		for (int i = 0; i < LENGTH; i++) {
 			state.append(buildingsSeen[CardinalDirection.SOUTH.ordinal()][i]
 					+ " ");
