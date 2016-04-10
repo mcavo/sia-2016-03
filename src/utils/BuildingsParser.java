@@ -11,7 +11,7 @@ public class BuildingsParser {
 	
 	private static int DIRECTIONS = 4;
 	private SearchStrategy searchStrategy;
-	private String heuristic;
+	private BuildingsHeuristic heuristic;
 	private int[][] dirMap;
 	private int[][] initialBoard;
 	
@@ -29,10 +29,15 @@ public class BuildingsParser {
 				}
 			}
 			br.readLine(); //Heuristic
-			heuristic = br.readLine();
-			System.out.println(heuristic);
-			if(!validHeuristic(heuristic))
+			String bHeuristic = br.readLine();
+			if(!validHeuristic(bHeuristic))
 				throw new IllegalArgumentException();
+			for(BuildingsHeuristic h : BuildingsHeuristic.values()) {
+				if(h.name().equals(bHeuristic)) {
+					heuristic = h;
+					break;
+				}
+			}
 			br.readLine(); //Board Size
 			int length = Integer.parseInt(br.readLine());
 			dirMap = new int[DIRECTIONS][length];
@@ -110,7 +115,7 @@ public class BuildingsParser {
 	public SearchStrategy getSearchStrategy() {
 		return searchStrategy;
 	}
-	public String getHeuristic() {
+	public BuildingsHeuristic getHeuristic() {
 		return heuristic;
 	}
 	

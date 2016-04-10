@@ -41,8 +41,7 @@ public class Test {
 			output.writeln("\nOUTPUT\n");
 			BuildingsProblem problem = new BuildingsProblem(p.getSouth(),
 					p.getNorth(), p.getEast(), p.getWest(),
-					new CompoundHeuristic(new SudokuHeuristic(),
-							new SkylineHeuristic()), p.getInitialBoard());
+					p.getHeuristic().heuristic(), p.getInitialBoard());
 
 			BuildingsEngine engine = new BuildingsEngine();
 			start = System.currentTimeMillis();
