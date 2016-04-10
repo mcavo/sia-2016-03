@@ -20,7 +20,7 @@ public class SudokuHeuristic implements Heuristic {
 				}				
 			}
 		}
-		return counter/2;
+		return (int) Math.ceil(((double)counter)/2);
 	}
 
 }
