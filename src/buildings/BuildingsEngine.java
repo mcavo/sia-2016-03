@@ -11,10 +11,6 @@ import java.util.PriorityQueue;
 public class BuildingsEngine extends GPSEngine {
 
 	public BuildingsEngine() {
-		clean();
-	}
-	
-	private void clean() {
 		open = new PriorityQueue<GPSNode>(new Comparator<GPSNode>() {
 			@Override
 			public int compare(GPSNode o1, GPSNode o2) {
@@ -37,6 +33,11 @@ public class BuildingsEngine extends GPSEngine {
 				}
 			}
 		});
+	}
+	
+	private void clean() {
+		open.clear();
+		bestCosts.clear();
 	}
 	// output.writeln("Strategy used : "+p.getSearchStrategy().name());
 	public boolean bEngine(GPSProblem myProblem, SearchStrategy myStrategy) {

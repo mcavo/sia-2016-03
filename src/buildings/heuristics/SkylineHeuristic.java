@@ -39,7 +39,7 @@ public class SkylineHeuristic implements Heuristic {
 				counter2++;
 			}
 		}
-		return (int) Math.max(counter1, Math.ceil(counter2/2));
+		return (int) Math.max(counter1, Math.ceil(((double)counter2)/2));
 		
 		
 	}
