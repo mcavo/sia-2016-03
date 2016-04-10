@@ -5,7 +5,7 @@ Board Size
 Directions
 N 1 0 3 2
 S 0 3 0 0
-W 0 2 0 1
+W 0 2 2 0
 E 0 0 2 0
 Initial Board
 2 1 4 3
