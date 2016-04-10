@@ -1,0 +1,75 @@
+INPUT
+
+Search Strategy
+BFS
+Board Size
+3
+Directions
+N 1 0 3
+S 0 2 0
+W 0 2 0
+E 0 0 1
+Initial Board
+1 2 3
+3 2 1
+2 3 1
+
+OUTPUT
+
+OK! solution found!
+
+    1 0 3 
+   -------
+0 | 1 2 3 | 0
+2 | 3 2 1 | 0
+0 | 2 3 1 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 2 from row 1.
+
+    1 0 3 
+   -------
+0 | 1 2 3 | 0
+2 | 1 2 3 | 0
+0 | 2 3 1 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    1 0 3 
+   -------
+0 | 3 2 1 | 0
+2 | 1 2 3 | 0
+0 | 2 3 1 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 1 and 2 from row 2.
+
+    1 0 3 
+   -------
+0 | 3 2 1 | 0
+2 | 1 2 3 | 0
+0 | 2 1 3 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 1 and 2 from row 1.
+
+    1 0 3 
+   -------
+0 | 3 2 1 | 0
+2 | 1 3 2 | 0
+0 | 2 1 3 | 1
+   -------
+    0 2 0 
+
+Expanded nodes: 645
+Border nodes: 2798
+Analized states: 149
+Solution cost: 4
+Solution depth: 4
+Strategy used : BFS
+It took 35 milliseconds to finish.
