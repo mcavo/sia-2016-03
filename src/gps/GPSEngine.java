@@ -51,8 +51,8 @@ public abstract class GPSEngine {
 							+ currentNode.getCost());
 				} else {
 					if (maxDepth == 0 || currentNode.getDepth()<maxDepth) {
-						explosionCounter++;
-						explode(currentNode);
+						if (explode(currentNode))
+							explosionCounter++;
 					} else {
 						lastIt=false;
 					}
