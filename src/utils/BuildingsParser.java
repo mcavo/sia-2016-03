@@ -3,6 +3,7 @@ package utils;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+import buildings.heuristics.Heuristic;
 import gps.SearchStrategy;
 import models.BuildingsHeuristic;
 import models.CardinalDirection;
@@ -11,7 +12,7 @@ public class BuildingsParser {
 	
 	private static int DIRECTIONS = 4;
 	private SearchStrategy searchStrategy;
-	private BuildingsHeuristic heuristic;
+	private Heuristic heuristic = null;
 	private int[][] dirMap;
 	private int[][] initialBoard;
 	
@@ -28,17 +29,19 @@ public class BuildingsParser {
 					break;
 				}
 			}
-			br.readLine(); //Heuristic
-			String bHeuristic = br.readLine();
-			if(!validHeuristic(bHeuristic))
-				throw new IllegalArgumentException();
-			for(BuildingsHeuristic h : BuildingsHeuristic.values()) {
-				if(h.name().equals(bHeuristic)) {
-					heuristic = h;
-					break;
+			String aux = br.readLine(); //Heuristic
+			if(aux.equals("Heuristic")) {
+				String bHeuristic = br.readLine();
+				if(!validHeuristic(bHeuristic))
+					throw new IllegalArgumentException();
+				for(BuildingsHeuristic h : BuildingsHeuristic.values()) {
+					if(h.name().equals(bHeuristic)) {
+						heuristic = h.heuristic();
+						break;
+					}
 				}
+				br.readLine(); //Board Size
 			}
-			br.readLine(); //Board Size
 			int length = Integer.parseInt(br.readLine());
 			dirMap = new int[DIRECTIONS][length];
 			br.readLine(); //Buildings Seen
@@ -115,7 +118,7 @@ public class BuildingsParser {
 	public SearchStrategy getSearchStrategy() {
 		return searchStrategy;
 	}
-	public BuildingsHeuristic getHeuristic() {
+	public Heuristic getHeuristic() {
 		return heuristic;
 	}
 	

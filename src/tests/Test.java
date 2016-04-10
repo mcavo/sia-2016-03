@@ -38,7 +38,7 @@ public class Test {
 			output.writeln("\nOUTPUT\n");
 			BuildingsProblem problem = new BuildingsProblem(p.getSouth(),
 					p.getNorth(), p.getEast(), p.getWest(),
-					p.getHeuristic().heuristic(), p.getInitialBoard());
+					p.getHeuristic(), p.getInitialBoard());
 
 			BuildingsEngine engine = new BuildingsEngine();
 			start = System.currentTimeMillis();

@@ -1,0 +1,14 @@
+Search Strategy
+DFS
+Board Size
+4
+Directions
+N 1 0 3 2
+S 0 2 0 0
+W 0 2 0 4
+E 0 0 2 0
+Initial Board
+4 2 1 3
+4 2 3 1
+1 4 2 3
+3 1 4 2

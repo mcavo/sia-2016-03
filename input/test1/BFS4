@@ -1,0 +1,13 @@
+Search Strategy
+BFS
+Board Size
+3
+Directions
+N 1 0 3
+S 0 2 0
+W 0 2 0
+E 0 0 1
+Initial Board
+1 2 3
+3 2 1
+2 3 1
