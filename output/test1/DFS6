@@ -1,0 +1,1115 @@
+INPUT
+
+Search Strategy
+DFS
+Board Size
+3
+Directions
+N 2 1 2
+S 2 3 1
+W 2 1 2
+E 2 3 1
+Initial Board
+1 3 2
+1 2 3
+2 3 1
+
+OUTPUT
+
+OK! solution found!
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 1 2 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 1 2 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 1 2 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 1 2 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 1 2 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 1 2 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 2 1 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 2 1 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 2 1 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 2 1 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 2 1 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 2 1 3 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 1.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 3 1 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 3 1 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 3 1 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 3 1 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 3 1 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 3 1 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 1 3 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 1 3 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 1 3 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 1 3 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 1 3 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 1 3 2 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 1.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 2 3 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 2 3 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 2 3 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 2 3 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 2 3 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 2 3 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 3 2 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 3 2 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 3 2 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 3 2 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 3 2 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 3 2 1 | 3
+2 | 2 3 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 2.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 3 2 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 3 2 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 3 2 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 3 2 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 3 2 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 3 2 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 2 3 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 2 3 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 2 3 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 2 3 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 2 3 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 2 3 1 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 1.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 1 3 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 1 3 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 1 3 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 1 3 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 1 3 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 1 3 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 3 1 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 3 1 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 3 1 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 3 1 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 3 1 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 3 1 2 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 1.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 2 1 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 2 1 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 2 1 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 2 1 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 2 1 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 2 1 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 1 2 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 1 2 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 1 2 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 1 2 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 1 2 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 1 2 3 | 3
+2 | 3 2 1 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 2.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 1 2 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 1 2 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 1 2 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 1 2 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 1 2 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 1 2 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 2 1 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 2 1 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 2 1 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 2 1 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 2 1 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 2 1 3 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 1.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 3 1 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 3 1 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 3 1 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 3 1 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 3 1 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 3 1 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 1 3 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 1 3 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 1 3 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 1 3 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 1 3 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 1 3 2 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 1.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 2 3 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 2 3 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 2 3 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 2 3 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 2 3 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 2 3 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    2 1 2 
+   -------
+2 | 2 3 1 | 2
+1 | 3 2 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 2 1 | 2
+1 | 3 2 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 2 3 | 2
+1 | 3 2 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 2 1 3 | 2
+1 | 3 2 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    2 1 2 
+   -------
+2 | 3 1 2 | 2
+1 | 3 2 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 3 2 1 | 3
+2 | 1 2 3 | 1
+   -------
+    2 3 1 
+
+Applying rule: Swaps positions 0 and 1 from row 2.
+
+    2 1 2 
+   -------
+2 | 1 3 2 | 2
+1 | 3 2 1 | 3
+2 | 2 1 3 | 1
+   -------
+    2 3 1 
+
+Expanded nodes: 108
+Border nodes: 468
+Analized states: 108
+Solution cost: 108
+Solution depth: 108
+Strategy used : DFS
+It took 20 milliseconds to finish.
