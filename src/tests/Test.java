@@ -7,9 +7,6 @@ import java.io.IOException;
 
 import buildings.BuildingsEngine;
 import buildings.BuildingsProblem;
-import buildings.heuristics.CompoundHeuristic;
-import buildings.heuristics.SkylineHeuristic;
-import buildings.heuristics.SudokuHeuristic;
 import utils.BuildingsParser;
 import utils.OutputManager;
 
