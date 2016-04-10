@@ -24,7 +24,7 @@ public class BuildingsEngine extends GPSEngine {
 				case DFS:
 					return o2.getCost() - o1.getCost();
 				case IDDFS:
-					// IDDFS Condition
+					// IDDFS Condition - Unreachable
 					return 0;
 				case GREEDY:
 					return (problem.getHValue(o1.getState()))
