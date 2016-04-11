@@ -1,0 +1,59 @@
+
+compilar:
+abrir consola
+pararse ne la carpeta del proyecto
+poner mvn package
+esto crea el .jar
+
+
+
+
+utilizar:
+abrir consola
+pararse en la carpeta del .jar
+java -jar NombreDelJar.jar PathInput PathOutput 
+PathInput es el path absoluto o relativo a el archivo de input
+PathOutput el path relativo o absoluto al archivo de output que sera creado
+
+
+
+
+Formato de Entrada
+
+Search Strategy
+[(DFS) (BSF) (IDDFS) (ASTAR) (GREEDY)] 
+Heuristic
+[(Heuristic1) (Heuristic2)]
+Board Size
+(Tamaño del lado del tablero)
+Directions
+N (Cantidad de edificios vistos desde el Norte)
+S (Cantidad de edificios vistos desde el Sur)
+W (Cantidad de edificios vistos desde el Oeste)
+E (Cantidad de edificion vistos desde el Este)
+Initial Board
+(Tablero inicial)
+
+Todos los numeros son separados por espacios y las filas por un fin de linea.
+
+Ejemplo:
+Search Strategy
+ASTAR
+Heuristic
+Heuristic1
+Board Size
+5
+Directions
+N 5 2 0 0 1
+S 1 0 0 3 2
+W 0 0 0 2 1
+E 0 0 2 2 2
+Initial Board
+1 3 2 5 4
+2 5 4 3 1
+3 4 1 5 2
+4 5 2 1 3
+4 3 1 2 5
+
+
+
