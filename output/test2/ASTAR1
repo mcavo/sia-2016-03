@@ -1,0 +1,89 @@
+INPUT
+
+Search Strategy
+ASTAR
+Heuristic
+Heuristic1
+Board Size
+5
+Directions
+N 0 0 3 2 1
+S 0 0 0 0 0
+W 0 2 0 0 0
+E 0 0 0 0 0
+Initial Board
+1 2 3 4 5
+2 3 4 5 1
+3 4 5 1 2
+4 5 1 2 3
+5 1 2 3 4
+
+OUTPUT
+
+OK! solution found!
+
+    0 0 3 2 1 
+   -----------
+0 | 1 2 3 4 5 | 0
+2 | 2 3 4 5 1 | 0
+0 | 3 4 5 1 2 | 0
+0 | 4 5 1 2 3 | 0
+0 | 5 1 2 3 4 | 0
+   -----------
+    0 0 0 0 0 
+
+Applying rule: Swaps positions 2 and 3 from row 2.
+
+    0 0 3 2 1 
+   -----------
+0 | 1 2 3 4 5 | 0
+2 | 2 3 4 5 1 | 0
+0 | 3 4 1 5 2 | 0
+0 | 4 5 1 2 3 | 0
+0 | 5 1 2 3 4 | 0
+   -----------
+    0 0 0 0 0 
+
+Applying rule: Swaps positions 1 and 3 from row 1.
+
+    0 0 3 2 1 
+   -----------
+0 | 1 2 3 4 5 | 0
+2 | 2 5 4 3 1 | 0
+0 | 3 4 1 5 2 | 0
+0 | 4 5 1 2 3 | 0
+0 | 5 1 2 3 4 | 0
+   -----------
+    0 0 0 0 0 
+
+Applying rule: Swaps positions 1 and 2 from row 3.
+
+    0 0 3 2 1 
+   -----------
+0 | 1 2 3 4 5 | 0
+2 | 2 5 4 3 1 | 0
+0 | 3 4 1 5 2 | 0
+0 | 4 1 5 2 3 | 0
+0 | 5 1 2 3 4 | 0
+   -----------
+    0 0 0 0 0 
+
+Applying rule: Swaps positions 1 and 3 from row 4.
+
+    0 0 3 2 1 
+   -----------
+0 | 1 2 3 4 5 | 0
+2 | 2 5 4 3 1 | 0
+0 | 3 4 1 5 2 | 0
+0 | 4 1 5 2 3 | 0
+0 | 5 3 2 1 4 | 0
+   -----------
+    0 0 0 0 0 
+
+Expanded nodes: 750
+Border nodes: 35228
+Analized states: 597
+Solution cost: 4
+Solution depth: 4
+Strategy used : ASTAR
+It took 995 milliseconds to finish.
