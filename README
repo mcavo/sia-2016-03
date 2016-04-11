@@ -11,7 +11,7 @@ compilar:
 ejecutar:
 - abrir una terminal
 - posicionarse en el directorio donde esté ubicado el .jar
-- utlizar el comando java -jar NombreDelJar.jar PathInput PathOutput 
+- utlizar el comando java -jar BuildingSolver.jar PathInput PathOutput 
 		-- PathInput: path absoluto o relativo al archivo con los parámetros iniciales
 		-- PathOutput: path relativo o absoluto al archivo de salida, que será creado
 
