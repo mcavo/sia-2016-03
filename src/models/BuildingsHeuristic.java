@@ -3,6 +3,7 @@ package models;
 import buildings.heuristics.CompoundHeuristic;
 import buildings.heuristics.Heuristic;
 import buildings.heuristics.SkylineHeuristic;
+import buildings.heuristics.SkylineHeuristic2;
 import buildings.heuristics.SudokuHeuristic;
 
 public enum BuildingsHeuristic {
@@ -13,7 +14,7 @@ public enum BuildingsHeuristic {
 		case Heuristic1: return new CompoundHeuristic(new SudokuHeuristic(),
 				new SkylineHeuristic());
 		case Heuristic2: return new CompoundHeuristic(new SudokuHeuristic(),
-				new SkylineHeuristic());
+				new SkylineHeuristic2());
 		default: throw new IllegalStateException();
 		}
 			
