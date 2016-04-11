@@ -1,19 +1,19 @@
 
 compilar:
-abrir consola
-pararse ne la carpeta del proyecto
-poner mvn package
-esto crea el .jar
+- abrir una terminal
+- posicionarse en la carpeta del proyecto
+- utilizar el comando mvn package
+- el resultado es un archivo de formato .jar
 
 
 
 
-utilizar:
-abrir consola
-pararse en la carpeta del .jar
-java -jar NombreDelJar.jar PathInput PathOutput 
-PathInput es el path absoluto o relativo a el archivo de input
-PathOutput el path relativo o absoluto al archivo de output que sera creado
+ejecutar:
+- abrir una terminal
+- posicionarse en el directorio donde esté ubicado el .jar
+- utlizar el comando java -jar NombreDelJar.jar PathInput PathOutput 
+		-- PathInput: path absoluto o relativo al archivo con los parámetros iniciales
+		-- PathOutput: path relativo o absoluto al archivo de salida, que será creado
 
 
 
