@@ -1,7 +1,9 @@
 INPUT
 
 Search Strategy
-BFS
+GREEDY
+Heuristic
+Heuristic1
 Board Size
 4
 Directions
@@ -28,18 +30,18 @@ OK! solution found!
    ---------
     0 0 2 0 
 
-Applying rule: Swaps positions 2 and 3 from row 0.
+Applying rule: Swaps positions 0 and 1 from row 0.
 
     4 0 0 0 
    ---------
-0 | 2 1 3 4 | 0
+0 | 1 2 4 3 | 0
 0 | 2 3 4 1 | 2
 0 | 3 4 1 2 | 2
 0 | 4 1 2 3 | 0
    ---------
     0 0 2 0 
 
-Applying rule: Swaps positions 0 and 1 from row 0.
+Applying rule: Swaps positions 2 and 3 from row 0.
 
     4 0 0 0 
    ---------
@@ -50,10 +52,10 @@ Applying rule: Swaps positions 0 and 1 from row 0.
    ---------
     0 0 2 0 
 
-Expanded nodes: 399
-Border nodes: 8342
-Analized states: 260
+Expanded nodes: 2
+Border nodes: 45
+Analized states: 2
 Solution cost: 2
 Solution depth: 2
-Strategy used : BFS
-It took 145 milliseconds to finish.
+Strategy used : GREEDY
+It took 7 milliseconds to finish.

@@ -3,6 +3,9 @@ package gps;
 import gps.api.GPSRule;
 import gps.api.GPSState;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GPSNode {
 
 	private GPSState state;
@@ -53,10 +56,22 @@ public class GPSNode {
 	}
 
 	public String getSolution() {
-		if (this.parent == null) {
-			return this.state.toString();
+		GPSNode node = this;
+		List<GPSNode> solution = new ArrayList<GPSNode>();
+		while(node.getParent()!= null){
+			solution.add(node);
+			node = node.getParent();
 		}
-		return this.parent.getSolution() +"\n\n"+"Applying rule: "+rule.getName()+"\n"+ this.state.toString();
+		solution.add(node);
+		StringBuilder builder = new StringBuilder();
+		for(int i=solution.size()-1; i>=0; i--){
+			if(solution.get(i).getParent()!=null){
+				builder.append("\n\n"+"Applying rule: "+solution.get(i).getRule().getName()+"\n"+ solution.get(i).getState().toString());				
+			}else{
+				builder.append(solution.get(i).state.toString());
+			}
+		}
+		return builder.toString();
 	}
 
 	@Override

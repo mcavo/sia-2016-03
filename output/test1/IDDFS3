@@ -1,9 +1,7 @@
 INPUT
 
 Search Strategy
-ASTAR
-Heuristic
-Heuristic1
+IDDFS
 Board Size
 4
 Directions
@@ -52,10 +50,10 @@ Applying rule: Swaps positions 2 and 3 from row 3.
    ---------
     0 1 2 0 
 
-Expanded nodes: 3
-Border nodes: 67
-Analized states: 3
+Expanded nodes: 2
+Border nodes: 30
+Analized states: 2
 Solution cost: 2
 Solution depth: 2
-Strategy used : ASTAR
-It took 8 milliseconds to finish.
+Strategy used : IDDFS
+It took 7 milliseconds to finish.

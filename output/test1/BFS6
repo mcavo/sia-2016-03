@@ -52,4 +52,4 @@ Analized states: 33
 Solution cost: 2
 Solution depth: 2
 Strategy used : BFS
-It took 13 milliseconds to finish.
+It took 8 milliseconds to finish.

@@ -16,6 +16,60 @@ Initial Board
 
 OUTPUT
 
-FAILED! solution not found!
+OK! solution found!
+
+    1 0 3 
+   -------
+0 | 1 2 3 | 0
+2 | 3 2 1 | 0
+0 | 2 3 1 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 1 and 2 from row 2.
+
+    1 0 3 
+   -------
+0 | 1 2 3 | 0
+2 | 3 2 1 | 0
+0 | 2 1 3 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 2 from row 0.
+
+    1 0 3 
+   -------
+0 | 3 2 1 | 0
+2 | 3 2 1 | 0
+0 | 2 1 3 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    1 0 3 
+   -------
+0 | 3 2 1 | 0
+2 | 2 3 1 | 0
+0 | 2 1 3 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 2 from row 1.
+
+    1 0 3 
+   -------
+0 | 3 2 1 | 0
+2 | 1 3 2 | 0
+0 | 2 1 3 | 1
+   -------
+    0 2 0 
+
+Expanded nodes: 46
+Border nodes: 21
+Analized states: 45
+Solution cost: 4
+Solution depth: 4
 Strategy used : IDDFS
-It took 4 milliseconds to finish.
+It took 16 milliseconds to finish.

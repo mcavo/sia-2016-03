@@ -38,12 +38,12 @@ Applying rule: Swaps positions 1 and 2 from row 2.
    -------
     0 2 0 
 
-Applying rule: Swaps positions 0 and 1 from row 1.
+Applying rule: Swaps positions 1 and 2 from row 0.
 
     1 0 3 
    -------
-0 | 1 2 3 | 0
-2 | 2 3 1 | 0
+0 | 1 3 2 | 0
+2 | 3 2 1 | 0
 0 | 2 1 3 | 1
    -------
     0 2 0 
@@ -52,13 +52,53 @@ Applying rule: Swaps positions 0 and 2 from row 0.
 
     1 0 3 
    -------
-0 | 3 2 1 | 0
-2 | 2 3 1 | 0
+0 | 2 3 1 | 0
+2 | 3 2 1 | 0
 0 | 2 1 3 | 1
    -------
     0 2 0 
 
-Applying rule: Swaps positions 0 and 2 from row 1.
+Applying rule: Swaps positions 1 and 2 from row 1.
+
+    1 0 3 
+   -------
+0 | 2 3 1 | 0
+2 | 3 1 2 | 0
+0 | 2 1 3 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 1 from row 2.
+
+    1 0 3 
+   -------
+0 | 2 3 1 | 0
+2 | 3 1 2 | 0
+0 | 1 2 3 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 1 from row 0.
+
+    1 0 3 
+   -------
+0 | 3 2 1 | 0
+2 | 3 1 2 | 0
+0 | 1 2 3 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 1 from row 1.
+
+    1 0 3 
+   -------
+0 | 3 2 1 | 0
+2 | 1 3 2 | 0
+0 | 1 2 3 | 1
+   -------
+    0 2 0 
+
+Applying rule: Swaps positions 0 and 1 from row 2.
 
     1 0 3 
    -------
@@ -68,10 +108,10 @@ Applying rule: Swaps positions 0 and 2 from row 1.
    -------
     0 2 0 
 
-Expanded nodes: 20
-Border nodes: 135
-Analized states: 19
-Solution cost: 4
-Solution depth: 4
+Expanded nodes: 61
+Border nodes: 380
+Analized states: 47
+Solution cost: 8
+Solution depth: 8
 Strategy used : GREEDY
-It took 10 milliseconds to finish.
+It took 57 milliseconds to finish.
